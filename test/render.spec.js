@@ -47,7 +47,7 @@ describe('Render Function', () => {
 
   it('renders to page "No Data" if "Empty Object" is passed');
 
-  it('renders to page "No Data" when "No Arguments" are passed');
+  it('renders to page "No Data" when "No Arguments" are passed ');
 });
 
 
