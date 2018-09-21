@@ -7,13 +7,16 @@
     "test": "test"
   },
   "devDependencies": {
+    "chai": "^4.1.2",
+    "concurrently": "^4.0.1",
+    "http-server": "^0.11.1",
     "mocha": "^5.2.0",
-    "puppeteer": "^1.8.0",
-    "chai": "^4.1.2"
+    "puppeteer": "^1.8.0"
   },
   "scripts": {
-    "test": "mocha  --exit",
-    "server": "http-server src"
+    "mocha": "mocha  --exit",
+    "server": "http-server src",
+    "test": "concurrently \" npm run server\" \"npm run mocha\""
   },
   "author": "",
   "license": "ISC"

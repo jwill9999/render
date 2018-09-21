@@ -1,4 +1,4 @@
-let render = (data={}, tag = 'h1') => {
+let render = (data={}, tag = 'h5') => {
     const root = document.getElementById('root');
     typeof data === 'object' && Object.keys(data).length !== 0 ?
         createSomeElements(data, tag) :
@@ -31,9 +31,12 @@ let createElement = (data, tag) =>  {
     root.appendChild(element);
 }
 
-render(1)
+render(1,'h1');
 render('String Text', 'p');
 render([1], 'h2');
+render({name: 'object'}, 'h3');
+render({},'h4');
+render();
     
 
     
