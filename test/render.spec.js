@@ -5,7 +5,6 @@ const puppeteer = require('puppeteer');
 
 
 
-
 describe('Mocha', () => {
 
   it('function correctly', async () => {
@@ -14,18 +13,16 @@ describe('Mocha', () => {
 });
 
 describe('Render Function', () => {
-      let page,browser;
+  let page, browser;
 
-      before(async () => {   
+  before(async () => {
+    browser = await puppeteer.launch();
+    page = await browser.newPage();
+    await page.goto('http://localhost:8080');
 
-        browser = await puppeteer.launch();
-        page = await browser.newPage();
-        await page.goto('http://localhost:8080');
-       
-      });
+  });
 
-    
-
+ 
 
 
   it('renders to page when "Number" passed', async () => {
@@ -43,16 +40,24 @@ describe('Render Function', () => {
     expect(text).to.equal('0 : 1')
   });
 
-  it('renders to page when "Object" of key value pairs is passed');
+  it('renders to page when "Object" of key value pairs is passed', async () => {
+    const text = await page.$eval('#root h3', el => el.innerHTML);
+    expect(text).to.equal('name : object');
+  });
 
-  it('renders to page "No Data" if "Empty Object" is passed');
+  it('renders to page "No Data" if "Empty Object" is passed', async () => {
+    const text = await page.$eval('#root h4', el => el.innerHTML);
+    expect(text).to.equal('No Data');
+  });
 
-  it('renders to page "No Data" when "No Arguments" are passed');
+  it('renders to page "No Data" when "No Arguments" are passed', async () => {
+    const text = await page.$eval('#root h5', el => el.innerHTML);
+    expect(text).to.equal('No Data');
+  });
 });
 
 
 
- 
 
 
 
