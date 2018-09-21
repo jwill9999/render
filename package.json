@@ -14,7 +14,7 @@
     "puppeteer": "^1.8.0"
   },
   "scripts": {
-    "mocha": "mocha  --exit",
+    "mocha": "mocha --exit ",
     "server": "http-server src",
     "test": "concurrently \" npm run server\" \"npm run mocha\""
   },

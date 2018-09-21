@@ -2,26 +2,35 @@ var {
   expect
 } = require('chai');
 const puppeteer = require('puppeteer');
+const server = require('../server');
+
+
+
 
 
 
 describe('Mocha', () => {
-
   it('function correctly', async () => {
     expect(true).to.be.true;
   });
 });
 
+
+
 describe('Render Function', () => {
   let page, browser;
 
-  before(async () => {
+  before(async () => {  
+    server.init();
     browser = await puppeteer.launch();
     page = await browser.newPage();
     await page.goto('http://localhost:8080');
-
   });
 
+
+ after(() => {
+  server.close();
+ })
  
 
 
