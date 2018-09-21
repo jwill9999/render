@@ -1,21 +1,23 @@
 {
   "name": "render",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "Render function",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "concurrently": "^4.0.1",
-    "http-server": "^0.11.1",
     "mocha": "^5.2.0",
     "puppeteer": "^1.8.0"
   },
   "scripts": {
     "test": "mocha --exit"
   },
-  "author": "",
+  "author": {
+    "name": "Jason Williams",
+    "email": "jasonwilliams@letuscode.co.uk",
+    "url": "http://letuscode.co.uk"
+  },
   "license": "ISC"
 }
