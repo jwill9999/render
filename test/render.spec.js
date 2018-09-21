@@ -20,8 +20,8 @@ describe('Mocha', () => {
 describe('Render Function', () => {
   let page, browser;
 
-  before(async () => {  
-    server.init();
+  before(async () => { 
+    server.init()
     browser = await puppeteer.launch();
     page = await browser.newPage();
     await page.goto('http://localhost:8080');
@@ -29,7 +29,7 @@ describe('Render Function', () => {
 
 
  after(() => {
-  server.close();
+   server.close()
  })
  
 
