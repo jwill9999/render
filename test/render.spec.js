@@ -18,13 +18,15 @@ describe('Mocha', () => {
 
 
 describe('Render Function', () => {
-  let page, browser;
+  let page;
 
   before(async () => { 
     server.init()
-    browser = await puppeteer.launch();
+    const browser = await puppeteer.launch();
     page = await browser.newPage();
     await page.goto('http://localhost:8080');
+   
+    
   });
 
 
