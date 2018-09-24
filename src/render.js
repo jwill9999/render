@@ -2,7 +2,7 @@ let render = (data={}, tag = 'h5') => {
     const root = document.getElementById('root');
     typeof data === 'object' && Object.keys(data).length !== 0 ?
         createSomeElements(data, tag) :
-        createElement(data, tag);
+        createElement(data, tag)  ;
 }
 
 
